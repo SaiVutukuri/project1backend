@@ -19,7 +19,7 @@ public class ProductDelete {
 		p.setQuantity(1);
 		p.setPrice(1500000);*/
 		
-		pds.deleteProducts(2);
+		pds.deleteProducts(3);
 	}
 
 }

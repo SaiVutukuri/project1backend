@@ -20,10 +20,14 @@ public class ProductInsert {
 		p.setProductdesc("BENZ WHITE");
 		p.setQuantity(5);
 		p.setPrice(750000);*/
-		p.setProductname("Phone");
+		/*p.setProductname("Phone");
 		p.setProductdesc("Mi Note5 Pro");
 		p.setQuantity(5);
-		p.setPrice(15000);
+		p.setPrice(15000);*/
+		p.setProductname("	Banana");
+		p.setProductdesc("Apple");
+		p.setQuantity(2);
+		p.setPrice(1500);
 		//p.setId(5);
 		pds.addProduct(p);
 		System.out.println("PRODUCT INSERTED SUCCESSFULLY");
