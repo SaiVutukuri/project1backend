@@ -31,20 +31,23 @@ assertTrue(p.getId()>0);
 
 @Test
 public void testUpdateProducts() {
-Product p= productDao.selectProducts(1);
-p.setPrice(2500000);
+Product p= productDao.selectProducts(4);
+p.setPrice(70000);
+p.setProductdesc("NIIT");
+p.setProductname("DTEJA");
+p.setQuantity(1);
 productDao.updateProduct(p);
-p=productDao.selectProducts(1);
-assertTrue(p.getPrice() == 2500000);
+p=productDao.selectProducts(4);
+assertTrue(p.getPrice() == 70000 && p.getProductdesc()=="NIIT" && p.getProductname()=="DTEJA" && p.getQuantity()==1);
 }
-
+@Ignore
 @Test
 public void testDeleteProducts() {
 productDao.deleteProducts(2);
 Product p=productDao.selectProducts(2);
 assertNull(p);
 }
-
+@Ignore
 @Test
 public void testSelectProducts() {
 Product actualproduct1=productDao.selectProducts(1);
@@ -52,12 +55,12 @@ Product actualproduct2=productDao.selectProducts(45);
 assertNotNull(actualproduct1);
 assertNull(actualproduct2);
 }
-
+@Ignore
 @Test
 public void testGetAllProducts() {
 List<Product> p=productDao.getAllProducts();
 assertFalse(p.isEmpty());
-assertTrue(p.size()==3);
+assertTrue(p.size()==9);
 }
 
 }
