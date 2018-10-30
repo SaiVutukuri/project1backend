@@ -1,6 +1,8 @@
 package com.niit.configuration;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+
+import com.niit.models.Category;
 import com.niit.models.Product;
 import java.util.Properties;
 import javax.sql.DataSource;
@@ -43,7 +45,7 @@ public class DBConfiguration {
 		lsf.addProperties(hibernateProperties);
 		//An array of Class objects of all the entities
 		//Map all entities to relational table
-		Class classes[]=new Class[]{Product.class}; //If product class is not yet created, remove this and add it later
+		Class classes[]=new Class[]{Product.class,Category.class}; //If product class is not yet created, remove this and add it later
 		//localsesionfactorybuilder -> sessionfactory -> map all entities with relation table
 		System.out.println("SessionFactory bean " + lsf);
 	    return lsf.addAnnotatedClasses(classes).buildSessionFactory();

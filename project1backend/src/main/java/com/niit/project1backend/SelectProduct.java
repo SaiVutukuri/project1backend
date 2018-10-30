@@ -17,12 +17,12 @@ public class SelectProduct {
 		ApplicationContext ac=new AnnotationConfigApplicationContext(DBConfiguration.class,ProductDaoImpl.class,ProductServiceImpl.class);
 		ProductService pds=(ProductService)ac.getBean("productServiceImpl");
 		Product p=new Product();
-		/*p.setProductname("Car");
-		p.setProductdesc("BENZ GRAY");
+		p.setProductname("Hello");
+		p.setProductdesc("hahahaha");
 		p.setQuantity(1);
 		p.setPrice(1500000);
-		p.setId(1);*/
-		pds.selectProducts(1);
+		p.setId(44);
+		pds.selectProducts(44);
 	}
 
 }
