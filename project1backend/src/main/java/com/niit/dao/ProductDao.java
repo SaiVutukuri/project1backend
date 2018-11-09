@@ -11,4 +11,5 @@ public void deleteProducts(int id);
 public Product selectProducts(int id);
 public List<Product> getAllProducts();
 public List<Category> getAllCategories();
+public void addCategory(Category category);
 }

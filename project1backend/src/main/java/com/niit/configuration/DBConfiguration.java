@@ -2,8 +2,15 @@ package com.niit.configuration;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.niit.models.Authorities;
+import com.niit.models.BillingAddress;
+import com.niit.models.CartItem;
 import com.niit.models.Category;
+import com.niit.models.Customer;
 import com.niit.models.Product;
+import com.niit.models.ShippingAddress;
+import com.niit.models.User;
+
 import java.util.Properties;
 import javax.sql.DataSource;
 import org.apache.commons.dbcp.BasicDataSource;
@@ -42,10 +49,12 @@ public class DBConfiguration {
 				"hibernate.dialect", "org.hibernate.dialect.H2Dialect");
 		hibernateProperties.setProperty("hibernate.hbm2ddl.auto", "update");
 		hibernateProperties.setProperty("hibernate.show_sql", "true");
+		hibernateProperties.setProperty("hibernate.format_sql", "true");
 		lsf.addProperties(hibernateProperties);
 		//An array of Class objects of all the entities
 		//Map all entities to relational table
-		Class classes[]=new Class[]{Product.class,Category.class}; //If product class is not yet created, remove this and add it later
+		Class classes[]=new Class[]{Product.class,Category.class,User.class,Authorities.class,Customer.class,
+				BillingAddress.class,ShippingAddress.class,CartItem.class}; //If product class is not yet created, remove this and add it later
 		//localsesionfactorybuilder -> sessionfactory -> map all entities with relation table
 		System.out.println("SessionFactory bean " + lsf);
 	    return lsf.addAnnotatedClasses(classes).buildSessionFactory();

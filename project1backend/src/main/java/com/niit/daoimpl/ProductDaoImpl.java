@@ -103,4 +103,22 @@ private SessionFactory sessionFactory;
 		return category;
 	}
 
+	public void addCategory(Category category) {
+		Session  s = sessionFactory.getCurrentSession();
+		//************************************************** INSERTION THROUGH SAVE() METHOD ************************************************************
+			int pk=(Integer)s.save(category);
+			if(pk != 0)
+			{
+				 System.out.println("--------------------------------------------------------------------------------------------------------");
+				System.out.println("************************************************** INSERTION THROUGH SAVE() METHOD ************************************************************");
+				System.out.println("CATEGORY RECORD INSERTED SUCCESSFULLY");
+			}
+			else
+			{
+				System.out.println("--------------------------------------------------------------------------------------------------------");
+				System.out.println("CAETGORY RECORD INSERTION FAILED");
+			}
+			s.flush();
+	}
+
 }

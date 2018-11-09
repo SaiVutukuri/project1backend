@@ -56,15 +56,12 @@ public class ProductServiceImpl implements ProductService{
 		
 	}
 
-	public boolean isEmailUnique(String email) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	public void registerCustomer(Customer customer) {
-		// TODO Auto-generated method stub
+	public void addCategory(Category category) {
+		pdao.addCategory(category);
 		
 	}
+
+	
 
 
 	
