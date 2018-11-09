@@ -58,6 +58,7 @@ public double getPrice() {
 public void setPrice(double price) {
 	this.price = price;
 }
+
 public Category getCategory() {
 	return category;
 }
@@ -71,5 +72,4 @@ public MultipartFile getImage() {
 public void setImage(MultipartFile image) {
 	this.image = image;
 }
-
 }

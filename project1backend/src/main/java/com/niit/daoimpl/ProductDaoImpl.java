@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.dao.ProductDao;
+import com.niit.models.Category;
 import com.niit.models.Product;
 @Repository
 @Transactional //commit and rollback
@@ -88,11 +89,18 @@ private SessionFactory sessionFactory;
 	}
 	public List<Product> getAllProducts()
 	{
-		Session session=sessionFactory.openSession();
+		Session session=sessionFactory.getCurrentSession();
 			Query query	=session.createQuery("from Product");
 			List<Product> product=query.list();
 		return product;
 		
+	}
+
+	public List<Category> getAllCategories() {
+		Session session = sessionFactory.getCurrentSession();
+		Query query= session.createQuery("from Category");
+		List<Category> category= query.list();
+		return category;
 	}
 
 }

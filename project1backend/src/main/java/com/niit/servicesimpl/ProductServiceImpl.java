@@ -11,6 +11,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.dao.ProductDao;
+import com.niit.models.Category;
+import com.niit.models.Customer;
 import com.niit.models.Product;
 import com.niit.services.ProductService;
 
@@ -22,7 +24,6 @@ public class ProductServiceImpl implements ProductService{
 	public ProductServiceImpl() {         
 		System.out.println("ProductServiceImplementation Bean Has Been Created");
 	}
-	
 	
 	public void deleteProducts(int id) {
 		pdao.deleteProducts(id);
@@ -46,6 +47,22 @@ public class ProductServiceImpl implements ProductService{
 	
 		pdao.updateProduct(p);
 		
+		
+	}
+
+
+	public List<Category> getAllCategories() {
+		return pdao.getAllCategories();
+		
+	}
+
+	public boolean isEmailUnique(String email) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public void registerCustomer(Customer customer) {
+		// TODO Auto-generated method stub
 		
 	}
 
