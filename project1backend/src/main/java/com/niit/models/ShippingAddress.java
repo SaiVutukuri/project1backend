@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 @Entity
-@Table(name="ShippingAddress_S191174100164")
+@Table(name="ShippingAddress_S191174100153")
 public class ShippingAddress {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)

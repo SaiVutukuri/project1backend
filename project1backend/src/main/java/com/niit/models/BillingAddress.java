@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="BillingAddress_S191174100164")
+@Table(name="BillingAddress_S191174100153")
 public class BillingAddress {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)

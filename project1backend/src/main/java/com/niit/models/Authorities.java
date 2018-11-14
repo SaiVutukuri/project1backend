@@ -8,7 +8,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Authorities_S191174100164")
+@Table(name="Authorities_S191174100153")
 public class Authorities {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)

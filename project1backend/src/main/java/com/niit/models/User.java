@@ -1,13 +1,17 @@
 package com.niit.models;
 
+import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="User_S191174100164")
+@Table(name="User_S191174100153")
 public class User {
 	@Id
 private String email;
@@ -17,6 +21,14 @@ private boolean enabled;
 private Authorities authorities;
 @OneToOne(mappedBy="user")
 private Customer customer;
+@OneToMany(mappedBy="user",fetch = FetchType.EAGER)
+private List<CartItem> cartItems;
+public List<CartItem> getCartItems() {
+	return cartItems;
+}
+public void setCartItems(List<CartItem> cartItems) {
+	this.cartItems = cartItems;
+}
 public Customer getCustomer() {
 	return customer;
 }

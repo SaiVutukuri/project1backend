@@ -24,7 +24,7 @@ private SessionFactory sessionFactory;
 	
 	public void addProduct(Product product) {//product is input
 		//database operation -insert product details in product table
-		Session session=sessionFactory.openSession();
+		Session session=sessionFactory.getCurrentSession();
 		session.save(product);//permanently store the product object in database, session.save
 		session.flush();
 	}
